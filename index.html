@@ -11,13 +11,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Sancreek&family=Cinzel:wght@500;600;700&family=Jost:wght@300..600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --botella:#0E2A22;   /* fondo */
-    --abeto:#17392F;     /* superficies */
-    --musgo:#2B5345;     /* líneas */
+    --botella:#0E2A22;
+    --abeto:#17392F;
+    --musgo:#2B5345;
     --oro:#C9A24B;
     --oro-claro:#EAD28F;
     --oro-hondo:#8C6A23;
-    --marfil:#F2E8CF;    /* papel de las boletas y texto */
+    --marfil:#F2E8CF;
     --marfil-tenue:rgba(242,232,207,.66);
     --lacre:#9B2D2A;
     --foil:linear-gradient(115deg,#8C6A23 0%,#E9D08C 22%,#B48A35 40%,#F4E3A8 58%,#A47C2C 78%,#E2C67C 100%);
@@ -39,7 +39,7 @@
     font-family:var(--texto);font-weight:350;font-size:17px;line-height:1.55;
     -webkit-font-smoothing:antialiased;
   }
-  body::before{ /* grano de papel */
+  body::before{
     content:"";position:fixed;inset:0;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
@@ -48,10 +48,8 @@
   :focus-visible{outline:2px solid var(--oro-claro);outline-offset:3px}
   .oculto{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-  /* Aviso de prueba */
   .demo{background:var(--oro);color:var(--botella);font-size:14px;text-align:center;padding:8px 16px;font-weight:500}
 
-  /* ——— Encabezado ——— */
   .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;padding:64px 0 40px}
   .sello{display:inline-flex;align-items:center;gap:10px;color:var(--oro-claro);font-size:15px;letter-spacing:.02em;margin:0 0 22px}
   .sello svg{flex:none}
@@ -72,14 +70,13 @@
   .datos div{min-width:120px}
 
   .premio{margin:0;position:relative;display:grid;place-items:center;aspect-ratio:3/4;max-height:520px}
-  .premio::before{ /* halo */
+  .premio::before{
     content:"";position:absolute;inset:8% 4%;border-radius:50%;
     background:radial-gradient(closest-side, rgba(234,210,143,.28), transparent 70%);filter:blur(6px);
   }
   .premio img,.premio svg{position:relative;max-height:100%;max-width:100%;width:auto;height:100%}
   .premio img{object-fit:contain;border-radius:var(--r);filter:drop-shadow(0 24px 40px rgba(0,0,0,.45))}
 
-  /* ——— Cuenta regresiva ——— */
   .reloj{border-top:1px solid var(--musgo);border-bottom:1px solid var(--musgo);padding:28px 0 30px;margin-bottom:56px}
   .reloj-fila{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
   .reloj h2{font-family:var(--texto);font-weight:400;font-size:17px;margin:0 0 6px;color:var(--marfil-tenue)}
@@ -94,7 +91,6 @@
   .cifra span{font-size:14px;color:var(--marfil-tenue)}
   .sep{font-family:var(--display);font-size:clamp(36px,6vw,58px);line-height:1.1;color:var(--musgo)}
 
-  /* ——— Ganador ——— */
   .ganador{position:relative;text-align:center;padding:56px 20px 64px;margin-bottom:56px;border:1px solid var(--oro-hondo);border-radius:var(--r);
     background:radial-gradient(70% 90% at 50% 0%, rgba(234,210,143,.16), transparent 70%),var(--abeto);overflow:hidden}
   .ganador p{margin:0}
@@ -110,7 +106,6 @@
   @keyframes brillo{from{background-position:0 0}to{background-position:100% 0}}
   #confeti{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 
-  /* ——— Talonario ——— */
   .talonario{margin-bottom:72px}
   .tal-cabeza{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
   h2.titulo{font-family:var(--display);font-weight:500;font-size:clamp(32px,4.6vw,48px);line-height:1.05;margin:0}
@@ -136,7 +131,7 @@
     color:var(--botella);background:var(--marfil);
     transition:transform .18s ease, background-color .18s ease;
   }
-  .boleta::after{ /* línea de perforación */
+  .boleta::after{
     content:"";position:absolute;left:12%;right:12%;bottom:9px;border-bottom:1.5px dotted rgba(14,42,34,.28);
   }
   .boleta:hover{transform:translateY(-2px)}
@@ -156,7 +151,6 @@
 
   footer{padding:0 0 140px;color:var(--marfil-tenue);font-size:14px}
 
-  /* ——— Barra de selección ——— */
   .barra{
     position:fixed;left:0;right:0;bottom:0;z-index:20;
     padding:14px 20px calc(14px + env(safe-area-inset-bottom));
@@ -183,7 +177,6 @@
   .btn-sec{background:transparent;color:var(--marfil);box-shadow:inset 0 0 0 1px var(--musgo)}
   .enlace{appearance:none;background:none;border:0;color:var(--marfil-tenue);font:inherit;font-size:15px;text-decoration:underline;cursor:pointer;padding:6px}
 
-  /* ——— Formulario ——— */
   dialog{
     border:0;padding:0;color:var(--marfil);background:transparent;
     width:min(560px,100%);max-width:100%;max-height:100%;margin:auto;
@@ -234,7 +227,7 @@
   .archivo input{position:absolute;opacity:0;width:1px;height:1px}
   .archivo input:focus-visible+label{outline:2px solid var(--oro-claro)}
   .archivo .nombre{font-size:14px;color:var(--marfil-tenue)}
-  .check{display:flex;gap:12px;align-items:flex-start;font-size:15px;cursor:pointer}
+  .check,.campo>label.check{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;cursor:pointer;margin:0}
   .check input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--oro);flex:none}
   .acciones{display:flex;flex-direction:column;gap:10px;margin-top:22px}
   .acciones .btn{width:100%}
@@ -246,11 +239,10 @@
   .listo .fichas{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:0 0 16px}
   .listo .pedido{font-size:14px}
 
-
-  /* ——— Ventana de bienvenida: boleto impreso ——— */
   .cabeza-der{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
   .cabeza-der .enlace{padding:0}
-  #dlgInfo{width:min(500px,calc(100% - 32px))}
+  #dlgInfo{width:min(500px,calc(100% - 32px));max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+  #dlgInfo::-webkit-scrollbar{display:none}
   .boleto{
     position:relative;color:var(--botella);
     background:
@@ -270,9 +262,8 @@
       radial-gradient(circle var(--c) at bottom left,#0000 98%,#000) bottom left,
       radial-gradient(circle var(--c) at bottom right,#0000 98%,#000) bottom right;
     mask-size:51% 51%;mask-repeat:no-repeat;
-    max-height:92vh;overflow:auto;
   }
-  .boleto::before{ /* filete dorado interior */
+  .boleto::before{
     content:"";position:absolute;inset:12px;pointer-events:none;
     border:1px solid #B48A35;outline:1px solid rgba(180,138,53,.35);outline-offset:-5px;
   }
@@ -311,12 +302,24 @@
   .boleto :focus-visible{outline-color:var(--lacre)}
   @media (max-width:600px){
     #dlgInfo{margin:auto;width:calc(100% - 24px)}
-    .boleto{padding:40px 24px 26px;--c:13px}
-    .boleto .corte{margin-left:-24px;margin-right:-24px}
+    .boleto{padding:34px 22px 24px;--c:12px}
+    .boleto::before{inset:9px}
+    .boleto h2{font-size:30px;margin-right:18px;margin-left:18px}
+    .boleto .sub{font-size:14px;margin-bottom:12px}
+    .boleto .sub br{display:none}
+    .boleto li{padding:9px 0;grid-template-columns:34px 1fr}
+    .boleto li::before{font-size:30px}
+    .boleto li b{font-size:19px}
+    .boleto li span{font-size:14.5px}
+    .boleto .corte{margin:16px -22px 16px}
+    .boleto .aviso{gap:12px}
+    .boleto .aviso .sello-img{width:60px;height:60px}
+    .boleto .aviso p{font-size:20px}
+    .boleto .aviso small{font-size:13.5px}
+    .boleto .btn-verde{margin-top:18px;padding:13px 18px;font-size:16px}
+    .boleto .cerrar{top:16px;right:16px}
   }
 
-
-  /* Sancreek solo tiene un peso: sin negrita ni cursiva falsas */
   h1,h1 .doce,.cifra b,.sep,.ganador .numero,.ganador .veredicto,h2.titulo,.hoja h2,
   .boleto h2,.boleto li b,.boleto li::before,.boleto .aviso p{font-weight:400!important;font-style:normal!important;font-synthesis:none}
   h1{letter-spacing:.005em;line-height:1.04}
@@ -324,7 +327,6 @@
   .boleto li b{font-size:22px}
   .boleto li::before{font-size:36px}
 
-  /* ——— Responsive ——— */
   @media (max-width:820px){
     .hero{grid-template-columns:1fr;padding:36px 0 28px;gap:8px}
     .premio{order:-1;height:auto;max-height:none;aspect-ratio:auto;margin-bottom:22px}
@@ -382,7 +384,6 @@
     </div>
 
     <figure class="premio" id="premio">
-      <!-- Si subes una foto llamada premio.jpg junto a este archivo, aparece aquí en vez del dibujo -->
       <img src="premio.jpg" alt="La botella que se rifa" onerror="this.remove()" onload="document.getElementById('dibujo').remove()">
       <svg id="dibujo" viewBox="0 0 200 400" role="img" aria-label="Ilustración de una botella de whisky">
         <defs>
@@ -454,18 +455,16 @@
     <p class="estado-carga" id="estadoCarga" role="status">Cargando números…</p>
   </main>
 
-
   <footer>¿Dudas sobre tu número o tu pago? Escríbele directamente a quien te compartió este enlace.</footer>
 </div>
 
-<!-- Bienvenida -->
 <dialog id="dlgInfo" aria-labelledby="infoTitulo">
   <div class="boleto" tabindex="-1" autofocus>
     <button class="cerrar" type="button" data-cerrar aria-label="Cerrar">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
     <h2 id="infoTitulo">Así funciona<br>la rifa</h2>
-    <p class="sub">Gana con las dos últimas cifras del premio mayor<br>de la Lotería de Boyacá</p>
+    <p class="sub">Gana con las dos últimas cifras del premio mayor <br>de la Lotería de Boyacá</p>
     <ol>
       <li><b>Escoge</b><span>Toca uno o varios números disponibles. Cada uno vale $10.000.</span></li>
       <li><b>Aparta y paga</b><span>Llena tus datos y paga por Nequi, llave o en efectivo.</span></li>
@@ -486,7 +485,6 @@
   </div>
 </dialog>
 
-<!-- Barra con la selección -->
 <div class="barra" id="barra" aria-hidden="true">
   <div class="barra-in">
     <div class="elegidos">
@@ -497,7 +495,6 @@
   </div>
 </div>
 
-<!-- Formulario -->
 <dialog id="dlgForm" aria-labelledby="formTitulo">
   <form class="hoja" id="formulario" novalidate>
     <div class="hoja-cabeza">
@@ -566,7 +563,6 @@
   </form>
 </dialog>
 
-<!-- Confirmación -->
 <dialog id="dlgListo" aria-labelledby="listoTitulo">
   <div class="hoja listo">
     <svg class="marca" width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true">
@@ -582,16 +578,16 @@
 </dialog>
 
 <script>
-/* ============ CONFIGURACIÓN ============ */
+
 const CONFIG = {
-  API_URL: 'https://script.google.com/macros/s/AKfycbwzIirThgB7cyukiKa2SzXOHqqLLiK35pd6iZqA7Ro0XhCfEyhQB5XAIYquq3fu7bql/exec',
+
+  API_URL: '',
   VALOR: 10000,
-  CIERRE: '2026-12-12T22:30:00-05:00',   
+  CIERRE: '2026-12-12T22:30:00-05:00',
   NEQUI: '3197284955',
   LLAVE: '3197284955',
-  CADA_SEGUNDOS: 20                       
+  CADA_SEGUNDOS: 20
 };
-/* ======================================= */
 
 const $ = s => document.querySelector(s);
 const pesos = n => '$' + n.toLocaleString('es-CO');
@@ -606,7 +602,6 @@ let ganador = '';
 let ganadorPagado = false;
 let cerrado = false;
 
-/* ---------- Datos ---------- */
 const demo = {
   leer(){
     try { return JSON.parse(localStorage.getItem('rifa-demo')) } catch(e){ return null }
@@ -642,7 +637,6 @@ async function enviar(datos){
   return r.json();
 }
 
-/* ---------- Talonario ---------- */
 const grilla = $('#grilla');
 NUMS.forEach(n => {
   const b = document.createElement('button');
@@ -690,7 +684,6 @@ function pintarBarra(){
   $('#barraTotal').textContent = pesos(lista.length * CONFIG.VALOR);
 }
 
-/* ---------- Estado y actualización ---------- */
 async function actualizar(){
   try {
     const d = await traerEstado();
@@ -715,7 +708,6 @@ function revisarCierre(){
   if (cerrado && !antes){ elegidos.clear(); if ($('#dlgForm').open) $('#dlgForm').close() }
 }
 
-/* ---------- Cuenta regresiva ---------- */
 let ultimoAnuncio = '';
 function reloj(){
   let s = Math.max(0, Math.floor((cierre - Date.now()) / 1000));
@@ -733,7 +725,6 @@ function reloj(){
   if (anuncio !== ultimoAnuncio){ $('#relojTexto').textContent = anuncio; ultimoAnuncio = anuncio }
 }
 
-/* ---------- Ganador ---------- */
 function mostrarGanador(nuevo){
   $('#reloj').hidden = true;
   if ($('#dlgInfo').open) $('#dlgInfo').close();
@@ -774,7 +765,6 @@ function confeti(){
   })(performance.now());
 }
 
-/* ---------- Formulario ---------- */
 const dlg = $('#dlgForm'), form = $('#formulario');
 
 $('#btnApartar').addEventListener('click', abrirForm);
@@ -897,7 +887,6 @@ function exito(numeros, pedido, m){
   $('#dlgListo').showModal();
 }
 
-/* ---------- Inicio ---------- */
 $('#verReglas').addEventListener('click', () => $('#dlgInfo').showModal());
 if (Date.now() < cierre) $('#dlgInfo').showModal();
 if (DEMO) $('#avisoDemo').hidden = false;
